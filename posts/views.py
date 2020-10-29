@@ -1,12 +1,30 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from items.models import Item
+from users.models import UserProfile
+
+from django.contrib.auth.models import User
+
 
 class HomeView(ListView):
-    model = Item
-    paginate_by = 4
+    model = UserProfile
     template_name = "home.html"
+    context_object_name = 'users'
+
+
+class ProfileView(ListView):
+    model = UserProfile
+    template_name = 'navbar.html'
+    context_object_name = 'users'
+
+
+class CategoryAllView(ListView):
+    model = Item
+    template_name = 'all_categories.html'
     context_object_name = 'items'
+    paginate_by = 4
+
+
 
 
 class CategoryRockView(ListView):

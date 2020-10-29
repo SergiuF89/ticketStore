@@ -58,13 +58,17 @@
           </li>
           {% endif %}
         <li class="nav-item ">
-            <a class="nav-link waves-effect" href="/admin">
-              <span class="clearfix d-none d-sm-inline-block"> <i class="fas fa-user"></i> </span>
-            </a>
+            {% for user in users %}
+                {% if request.user == user.user %}
+                <a class="nav-link waves-effect" href="{% url 'core:profile' user.pk %}">
+                  <span class="clearfix d-none d-sm-inline-block"> <i class="fas fa-user"></i> </span>
+                </a>
+                {% endif %}
+            {% endfor %}
           </li>
           <li class="nav-item ">
             <a class="nav-link waves-effect" href="/admin">
-              <span class="clearfix d-none d-sm-inline-block"> {{ request.user.username }} </span>
+              <span class="clearfix d-none d-sm-inline-block"> {{ request.user.username }}</span>
             </a>
           </li>
 

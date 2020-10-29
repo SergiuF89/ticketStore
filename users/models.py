@@ -1,8 +1,6 @@
-from django.db.models.signals import post_save
 from django.conf import settings
 from django.db import models
-from django.db.models import Sum
-from django.shortcuts import reverse
+import datetime
 from django_countries.fields import CountryField
 
 
@@ -10,16 +8,26 @@ ADDRESS_CHOICES = (
     ('B', 'Billing'),
     ('S', 'Shipping'),
 )
+GENDER = (
+    (1, 'Male'),
+    (2, 'Female'),
+    (3, 'N/A'),
+)
 
 
 class UserProfile(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    first_name = models.CharField(default='firstname', max_length=50)
+    last_name = models.CharField(default='lastname', max_length=50)
+    gender = models.IntegerField(choices=GENDER, default=3)
+    birth_date = models.DateField( null=True, blank=True)
     stripe_customer_id = models.CharField(max_length=50, blank=True, null=True)
     one_click_purchasing = models.BooleanField(default=False)
 
     def __str__(self):
         return self.user.username
+
 
 
 class Address(models.Model):
