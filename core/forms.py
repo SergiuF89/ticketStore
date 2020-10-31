@@ -1,6 +1,8 @@
 from django import forms
 from django_countries.fields import CountryField
 from django_countries.widgets import CountrySelectWidget
+from users.models import UserProfile
+from django.forms import ModelForm
 
 
 PAYMENT_CHOICES = (
@@ -8,6 +10,17 @@ PAYMENT_CHOICES = (
     ('P', 'PayPal')
 )
 
+# class ProfileForm(forms.Form):
+#     first_name = forms.CharField(label="First name", required=True, max_length=50)
+#     last_name = forms.CharField(label="First Name", required=True, max_length=50)
+#     gender = forms.IntegerField(initial=1)
+#     birth_date = forms.DateField(required=False, initial='01-01-2000')
+#
+#     def clean(self):
+#         super(ProfileForm, self).clean()
+#         first_name = self.cleaned_data.get('first_name')
+#         last_name = self.cleaned_data.get('last_name')
+#         return self.cleaned_data
 
 class CheckoutForm(forms.Form):
     shipping_address = forms.CharField(required=False)

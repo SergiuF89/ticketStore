@@ -6,14 +6,13 @@ from django.http import HttpResponseRedirect, HttpResponse, HttpResponseForbidde
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import Http404
 
-
-
 class ProfileView(LoginRequiredMixin, UpdateView):
       model = UserProfile
       fields = ['first_name', 'last_name', 'gender', 'birth_date']
       template_name = 'profile_update.html'
       context_object_name = 'profile'
       success_url = reverse_lazy('core:home')
+
 
       def get_context_data(self, *, object_list=None, **kwargs):
             context = super(ProfileView, self).get_context_data(**kwargs)
