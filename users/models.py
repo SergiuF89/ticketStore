@@ -24,6 +24,9 @@ class UserProfile(models.Model):
     birth_date = models.DateField( null=True, blank=True)
     stripe_customer_id = models.CharField(max_length=50, blank=True, null=True)
     one_click_purchasing = models.BooleanField(default=False)
+    phone_number = models.IntegerField(null=False, default=0000000000)
+    profile_image = models.ImageField()
+
 
     def __str__(self):
         return self.user.username

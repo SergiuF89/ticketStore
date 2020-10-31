@@ -4,6 +4,7 @@
     <div>
         Welcome {{ user_profile.first_name }} {{ user_profile.last_name }}
         <p>{{ user_profile.birth_date }}</p>
+        <img class="w-25"  src="{{ user_profile.profile_image.url }}" alt="">
     </div>
     {% if request.user.pk == user_profile.pk  %}
     <a href="{% url 'core:profile-update' user_profile.pk %}"><button class="btn btn-primary">Edit</button></a>

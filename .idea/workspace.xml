@@ -22,10 +22,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b56bb89-57ef-4eb6-b066-41821d25a11e" name="Default Changelist" comment="added requirements.txt">
+    <list default="true" id="6b56bb89-57ef-4eb6-b066-41821d25a11e" name="Default Changelist" comment="restricted acces to profile and update profile if not authorized">
+      <change afterPath="$PROJECT_DIR$/users/migrations/0002_auto_20201031_2236.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/items/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/items/migrations/0002_auto_20201029_2055.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/migrations/0002_auto_20201029_2055.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +45,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="da4bea4d-012e-4284-bbaa-316cafc38ef4" />
+  <component name="JupyterTrust" id="3daf5e28-6a70-42eb-be28-aad5d04b12aa" />
   <component name="ProjectId" id="1jMSPcyTTgLUbx4dh09aWE3W24w" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -53,22 +59,20 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="js.buildTools.grunt.grunt-cli.package" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../djangoProjects/testing" />
-    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="last_opened_file_path" value="$USER_HOME$/djangoProjects/testing" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="ticketStore" />
+      <module name="django-ecommerce" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="D:\Python\Django\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/core" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -79,11 +83,6 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="js.build_tools.grunt">
-      <node-interpreter value="project" />
-      <envs />
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -112,8 +111,6 @@
       <workItem from="1603992879753" duration="5454000" />
       <workItem from="1603998353130" duration="2035000" />
       <workItem from="1604127385646" duration="12470000" />
-      <workItem from="1604149500239" duration="2890000" />
-      <workItem from="1604172120972" duration="772000" />
     </task>
     <task id="LOCAL-00001" summary="reorganized the code">
       <created>1603912771905</created>
@@ -164,21 +161,7 @@
       <option name="project" value="LOCAL" />
       <updated>1604145732590</updated>
     </task>
-    <task id="LOCAL-00008" summary="fixed authorization in template for edit profile">
-      <created>1604146424747</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1604146424747</updated>
-    </task>
-    <task id="LOCAL-00009" summary="added requirements.txt">
-      <created>1604146568411</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1604146568411</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,25 +188,20 @@
     <MESSAGE value="made changes to navbar and added custom context data&#10;changed footbar" />
     <MESSAGE value="restricted acces to edit another user's profile" />
     <MESSAGE value="restricted acces to profile and update profile if not authorized" />
-    <MESSAGE value="fixed authorization in template for edit profile" />
-    <MESSAGE value="added requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="added requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="restricted acces to profile and update profile if not authorized" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604172892864">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="552" y="212" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604175386950">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604172892864" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603997731744">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
+    <state x="552" y="212" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1604175386950" />
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603997731744" />
     <state x="2610" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603907329984" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1604150891193">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1603994681721">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1603618904927" />
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604150891193" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603994681721" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1603896987945">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -240,6 +218,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603896987945" />
+    <state x="147" y="65" key="MergeDialog" timestamp="1604173099425">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1604173099425" />
     <state x="2518" y="281" key="MultipleFileMergeDialog" timestamp="1603912807954">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -248,16 +230,25 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2381" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1603613711205" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604146573674">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604145737590">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604141912398" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1604146573674" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1604145737590" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604000132977" />
     <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603912788218" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604145729944">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="557" y="202" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604173077626">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="557" y="202" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1604173077626" />
+    <state x="170" y="0" width="1089" height="587" key="dock-window-1" timestamp="1604176978996">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="170" y="0" width="1089" height="587" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1604176978996" />
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup" timestamp="1604176589615">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1604176589615" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604143069597" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1604145729944" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603993579265" />

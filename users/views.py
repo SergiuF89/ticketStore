@@ -8,7 +8,7 @@ from django.http import Http404
 
 class ProfileView(LoginRequiredMixin, UpdateView):
       model = UserProfile
-      fields = ['first_name', 'last_name', 'gender', 'birth_date']
+      fields = ['first_name', 'last_name', 'gender', 'birth_date', 'profile_image', 'phone_number']
       template_name = 'profile_update.html'
       context_object_name = 'profile'
       success_url = reverse_lazy('core:home')
@@ -50,6 +50,8 @@ class UserProfileView(DetailView):
       def get(self, request, *args, **kwargs):
             user_id = request.user.pk
             profile_id = kwargs['pk']
+            print(user_id)
+            print(profile_id)
             if user_id != profile_id:
                   return HttpResponseForbidden()
             else:
