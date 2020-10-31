@@ -10,7 +10,7 @@ from django.http import Http404
 
 class ProfileView(LoginRequiredMixin, UpdateView):
       model = UserProfile
-      fields = '__all__'
+      fields = ['first_name', 'last_name', 'gender', 'birth_date']
       template_name = 'profile_update.html'
       context_object_name = 'profile'
       success_url = reverse_lazy('core:home')
@@ -34,9 +34,13 @@ class ProfileView(LoginRequiredMixin, UpdateView):
                   items = request.POST.dict()
                   del items['csrfmiddlewaretoken']
                   user.update(**items)
-                  return HttpResponseRedirect(reverse('core:home'))
+                  return HttpResponseRedirect(reverse('core:profile-view', args=(pk,)))
             else:
                   return HttpResponse('You are not authoried to make this change!', status=401)
+
+      # def form_valid(self, form):
+      #       form.instance.manager = self.request.user
+      #       return super().form_valid(form)
 
 
 class UserProfileView(DetailView):
