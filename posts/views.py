@@ -11,6 +11,11 @@ class HomeView(ListView):
     template_name = "home.html"
     context_object_name = 'users'
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        context['products'] = Item.objects.all()
+        return context
+
 
 class ProfileView(ListView):
     model = UserProfile
@@ -24,6 +29,17 @@ class CategoryAllView(ListView):
     context_object_name = 'items'
     paginate_by = 4
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(CategoryAllView, self).get_context_data(**kwargs)
+        context['products'] = Item.objects.all()
+        return context
+
+
+class FooterListView(ListView):
+    model = Item
+    template_name = 'footer.html'
+    context_object_name = 'products'
+
 
 
 
@@ -35,6 +51,7 @@ class CategoryRockView(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(CategoryRockView, self).get_context_data(**kwargs)
         context['rock_category'] = Item.objects.filter(genre=1)
+        context['products'] = Item.objects.all()
         return context
 
 
@@ -46,6 +63,7 @@ class CategoryHouseView(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(CategoryHouseView, self).get_context_data(**kwargs)
         context['house_category'] = Item.objects.filter(genre=2)
+        context['products'] = Item.objects.all()
         return context
 
 class CategoryHipHopView(ListView):
@@ -56,4 +74,5 @@ class CategoryHipHopView(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(CategoryHipHopView, self).get_context_data(**kwargs)
         context['hip_hop_category'] = Item.objects.filter(genre=3)
+        context['products'] = Item.objects.all()
         return context

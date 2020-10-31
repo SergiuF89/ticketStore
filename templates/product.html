@@ -2,7 +2,7 @@
 
 {% block content %}
 
-  <main class="mt-5 pt-4">
+  <main style="margin-bottom: 15%" class="mt-5 pt-4">
     <div class="container dark-grey-text mt-2">
 
       <!--Grid row-->
@@ -24,7 +24,7 @@
 
             <div class="mb-3">
               <a href="">
-                <span class="badge purple mr-1">{{ object.get_category_display }}</span>
+                <span class="badge purple mr-1">{{ object.title }}</span>
               </a>
             </div>
 
@@ -67,41 +67,7 @@
         <!--Grid column-->
 
       </div>
-      <!--Grid row-->
 
-      <hr>
-
-      <!--Grid row-->
-      <div class="row d-flex justify-content-center wow fadeIn">
-
-        <!--Grid column-->
-        <div class="col-md-6 text-center">
-
-          <h4 class="my-4 h4">Additional information</h4>
-            <p>Other tickets</p>
-        </div>
-        <!--Grid column-->
-
-      </div>
-      <!--Grid row-->
-
-      <!--Grid row-->
-      <div class="row wow fadeIn">
-
-        <!--Grid column-->
-          {% for product in products %}
-        <div class="col-lg-4 col-md-12">
-
-            <a href="{{ product.get_absolute_url }}"><img style="height: 230px" src="{{ product.image.url }}" class="img-thumbnail"></a>
-
-        </div>
-          {% endfor %}
-        <!--Grid column-->
-
-        <!--Grid column-->
-
-      </div>
-      <!--Grid row-->
 
     </div>
   </main>
