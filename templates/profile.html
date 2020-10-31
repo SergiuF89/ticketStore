@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="height: 600px" class="container">
+<h1>{{ user_profile.first_name }}</h1>
+    {% if request.user.pk == user_profile.pk  %}
+    <a href="{% url 'core:profile-update' user_profile.pk %}"><button class="btn btn-primary">Edit</button></a>
+    {% endif %}
+</div>
+{% endblock %}
