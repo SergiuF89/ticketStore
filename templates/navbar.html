@@ -19,59 +19,38 @@
 
             <!-- Left -->
             <ul class="navbar-nav mr-auto">
-                {% comment %} <li class="nav-item active">
-            <a class="nav-link waves-effect" href="/">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="/checkout">
-            Checkout</a>
-          </li> {% endcomment %}
-            </ul>
-
-            <!-- Right -->
-            <ul class="navbar-nav nav-flex-icons">
-                {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link waves-effect" href="/">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                {% if request.user.is_anonymous %}
                     <li class="nav-item">
-                        <a href="{% url 'core:order-summary' %}" class="nav-link waves-effect">
-                            <span class="badge blue z-depth-1 mr-1"> {{ request.user|cart_item_count }} </span>
-                            <i class="fas fa-cart-arrow-down"></i>
-                            <span class="clearfix d-none d-sm-inline-block"> Cart </span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link waves-effect" href="{% url 'account_logout' %}">
-                            <span class="clearfix d-none d-sm-inline-block"> Logout </span>
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link waves-effect" href="{% url 'account_login' %}">
-                            <span class="clearfix d-none d-sm-inline-block"> Login </span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link waves-effect" href="{% url 'account_signup' %}">
-                            <span class="clearfix d-none d-sm-inline-block"> Signup </span>
-                        </a>
+                        <a class="nav-link waves-effect" href="{% url 'account_login' %}">Login</a>
                     </li>
                 {% endif %}
-                <li class="nav-item ">
-                    {% for user in users %}
-                        {% if request.user.pk == user.pk %}
-                            <a class="nav-link waves-effect" href="{% url 'core:profile-view' user.pk %}">
-                                <span class="clearfix d-none d-sm-inline-block"> <i class="fas fa-user"></i> </span>
-                            </a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link waves-effect" href="{% url 'core:profile-view' user.pk %}">
-                                    <span class="clearfix d-none d-sm-inline-block"> {{ request.user.username }}</span>
-                                </a>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                {% endif %}
+                {% if request.user.is_anonymouse %}
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect" href="{% url 'account_signup' %}">Signup</a>
+                    </li>
+                {% endif %}
+                <li style="margin-top: 2px" class="pt-1"><span class="badge blue z-depth-1 ml-1"> {{ request.user|cart_item_count }} </span>
+                </li>
+                <li><a href="{% url 'core:order-summary' %}"><i style="margin-top: 2px" class=" ml-2 pt-2 fas fa-cart-arrow-down"></i></a></li>
+                {% for user in users %}
+                    {% if request.user.pk == user.pk %}
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect" href="{% url 'core:profile-view' user.pk %}">Profile</a>
+                        </li>
+                    {% endif %}{% endfor %}
             </ul>
+
+
 
         </div>
 
