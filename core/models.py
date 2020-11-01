@@ -2,11 +2,11 @@ from django.db.models.signals import post_save
 from django.conf import settings
 from django.db import models
 from items.models import Item
-from users.models import UserProfile, Address
+from users.models import Address, UserProfile
 
 
 class OrderItem(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+    user = models.ForeignKey(UserProfile,
                              on_delete=models.CASCADE)
     ordered = models.BooleanField(default=False)
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
@@ -31,7 +31,7 @@ class OrderItem(models.Model):
 
 
 class Order(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+    user = models.ForeignKey(UserProfile,
                              on_delete=models.CASCADE)
     ref_code = models.CharField(max_length=20, blank=True, null=True)
     items = models.ManyToManyField(OrderItem)
@@ -63,7 +63,7 @@ class Order(models.Model):
     '''
 
     def __str__(self):
-        return self.user.username
+        return self.user
 
     def get_total(self):
         total = 0
@@ -76,13 +76,13 @@ class Order(models.Model):
 
 class Payment(models.Model):
     stripe_charge_id = models.CharField(max_length=50)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+    user = models.ForeignKey(UserProfile,
                              on_delete=models.SET_NULL, blank=True, null=True)
     amount = models.FloatField()
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.user.username
+        return self.user
 
 
 class Coupon(models.Model):
@@ -103,9 +103,9 @@ class Refund(models.Model):
         return f"{self.pk}"
 
 
-def userprofile_receiver(sender, instance, created, *args, **kwargs):
-    if created:
-        userprofile = UserProfile.objects.create(user=instance)
+# def userprofile_receiver(sender, instance, created, *args, **kwargs):
+#     if created:
+#         userprofile = UserProfile.objects.create()
 
 
-post_save.connect(userprofile_receiver, sender=settings.AUTH_USER_MODEL)
+# post_save.connect(userprofile_receiver, sender=UserProfile)

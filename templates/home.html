@@ -6,10 +6,11 @@
     </div>
   </main>
     <div style="height: 500px">
+
     {% for user in users %}
         <ul>
-        {% if request.user == user.user %}
-            <h1>Welcome {{ user.first_name }}</h1>
+        {% if request.user.pk == user.pk %}
+            <h1>Welcome {{ user.username }}</h1>
             <p>It is the {% now "jS \o\f F" %}</p>
         {% endif %}
         </ul>

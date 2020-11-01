@@ -59,7 +59,7 @@
           {% endif %}
         <li class="nav-item ">
             {% for user in users %}
-                {% if request.user == user.user %}
+                {% if request.user.pk == user.pk %}
                 <a class="nav-link waves-effect" href="{% url 'core:profile-view' user.pk %}">
                   <span class="clearfix d-none d-sm-inline-block"> <i class="fas fa-user"></i> </span>
                 </a>

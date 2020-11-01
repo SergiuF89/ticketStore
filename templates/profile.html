@@ -1,13 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-<div style="height: 600px" class="container">
-    <div>
-        Welcome {{ user_profile.first_name }} {{ user_profile.last_name }}
-        <p>{{ user_profile.birth_date }}</p>
-        <img class="w-25"  src="{{ user_profile.profile_image.url }}" alt="">
+    <div style="height: 600px" class="container">
+        <div class="col-5">
+            Welcome {{ user_profile.first_name }} {{ user_profile.last_name }}
+            <p>{{ user_profile.birth_date }}</p>
+            <p>+40 {{ user_profile.phone_number }}</p>
+            <p>You have been with us since {{ user_profile.joined_on }}</p>
+            <p>{{ user_profile.country.name }} <img class="ml-2" src="{{ user_profile.country.flag }}" alt=""></p>
+
+            {% if user_profile.profile_image %}
+                <img class="w-25" src="{{ user_profile.profile_image.url }}" alt="">
+            {% endif %}
+        </div>
+        {% if request.user.pk == user_profile.pk %}
+            <a href="{% url 'core:profile-update' user_profile.pk %}">
+                <button class="btn btn-primary">Edit</button>
+            </a>
+        {% endif %}
     </div>
-    {% if request.user.pk == user_profile.pk  %}
-    <a href="{% url 'core:profile-update' user_profile.pk %}"><button class="btn btn-primary">Edit</button></a>
-    {% endif %}
-</div>
 {% endblock %}
