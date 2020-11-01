@@ -20,7 +20,7 @@ class UserProfile(AbstractUser):
       stripe_customer_id = models.CharField(max_length=50, blank=True, null=True)
       one_click_purchasing = models.BooleanField(default=False)
       phone_number = models.CharField(max_length=15, blank=True)
-      profile_image = models.ImageField(blank=True, default='', upload_to='')
+      profile_image = models.ImageField(blank=True, default='no_image.png', upload_to='')
       country = CountryField(default='Romania')
       joined_on = models.DateField(auto_now_add=True, blank=True)
 

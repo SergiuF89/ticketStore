@@ -3,23 +3,23 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
     <div class="container">
 
-      <!-- Brand -->
-      <a class="navbar-brand waves-effect" href="/">
-        <strong class="blue-text">rockIT</strong>
-      </a>
+        <!-- Brand -->
+        <a class="navbar-brand waves-effect" href="/">
+            <strong class="blue-text">rockIT</strong>
+        </a>
 
-      <!-- Collapse -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <!-- Links -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <!-- Left -->
-        <ul class="navbar-nav mr-auto">
-          {% comment %} <li class="nav-item active">
+            <!-- Left -->
+            <ul class="navbar-nav mr-auto">
+                {% comment %} <li class="nav-item active">
             <a class="nav-link waves-effect" href="/">Home
               <span class="sr-only">(current)</span>
             </a>
@@ -28,52 +28,52 @@
             <a class="nav-link waves-effect" href="/checkout">
             Checkout</a>
           </li> {% endcomment %}
-        </ul>
+            </ul>
 
-        <!-- Right -->
-        <ul class="navbar-nav nav-flex-icons">
-          {% if request.user.is_authenticated %}
-          <li class="nav-item">
-            <a href="{% url 'core:order-summary' %}" class="nav-link waves-effect">
-              <span class="badge red z-depth-1 mr-1"> {{ request.user|cart_item_count }} </span>
-              <i class="fas fa-cart-arrow-down"></i>
-              <span class="clearfix d-none d-sm-inline-block"> Cart </span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="{% url 'account_logout' %}">
-              <span class="clearfix d-none d-sm-inline-block"> Logout </span>
-            </a>
-          </li>
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="{% url 'account_login' %}">
-              <span class="clearfix d-none d-sm-inline-block"> Login </span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="{% url 'account_signup' %}">
-              <span class="clearfix d-none d-sm-inline-block"> Signup </span>
-            </a>
-          </li>
-          {% endif %}
-        <li class="nav-item ">
-            {% for user in users %}
-                {% if request.user.pk == user.pk %}
-                <a class="nav-link waves-effect" href="{% url 'core:profile-view' user.pk %}">
-                  <span class="clearfix d-none d-sm-inline-block"> <i class="fas fa-user"></i> </span>
-                </a>
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="{% url 'core:order-summary' %}" class="nav-link waves-effect">
+                            <span class="badge blue z-depth-1 mr-1"> {{ request.user|cart_item_count }} </span>
+                            <i class="fas fa-cart-arrow-down"></i>
+                            <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect" href="{% url 'account_logout' %}">
+                            <span class="clearfix d-none d-sm-inline-block"> Logout </span>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect" href="{% url 'account_login' %}">
+                            <span class="clearfix d-none d-sm-inline-block"> Login </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect" href="{% url 'account_signup' %}">
+                            <span class="clearfix d-none d-sm-inline-block"> Signup </span>
+                        </a>
+                    </li>
                 {% endif %}
-            {% endfor %}
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link waves-effect" href="/admin">
-              <span class="clearfix d-none d-sm-inline-block"> {{ request.user.username }}</span>
-            </a>
-          </li>
+                <li class="nav-item ">
+                    {% for user in users %}
+                        {% if request.user.pk == user.pk %}
+                            <a class="nav-link waves-effect" href="{% url 'core:profile-view' user.pk %}">
+                                <span class="clearfix d-none d-sm-inline-block"> <i class="fas fa-user"></i> </span>
+                            </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link waves-effect" href="{% url 'core:profile-view' user.pk %}">
+                                    <span class="clearfix d-none d-sm-inline-block"> {{ request.user.username }}</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+            </ul>
 
-        </ul>
-      </div>
+        </div>
 
     </div>
-  </nav>
+</nav>

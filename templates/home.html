@@ -10,7 +10,7 @@
     {% for user in users %}
         <ul>
         {% if request.user.pk == user.pk %}
-            <h1>Welcome {{ user.username }}</h1>
+            <h1>Welcome {{ user.first_name }} {{ user.last_name }}!</h1>
             <p>It is the {% now "jS \o\f F" %}</p>
         {% endif %}
         </ul>
