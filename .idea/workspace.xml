@@ -22,25 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b56bb89-57ef-4eb6-b066-41821d25a11e" name="Default Changelist" comment="fixed a bug in template">
-      <change afterPath="$PROJECT_DIR$/core/migrations/0002_auto_20201101_1507.py" afterDir="false" />
+    <list default="true" id="6b56bb89-57ef-4eb6-b066-41821d25a11e" name="Default Changelist" comment="redefined user model&#10;made a lot of changes through the apps to fix the errors after the user model change.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/items/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/items/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/items/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rockIT/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/rockIT/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/migrations/0002_auto_20201031_2236.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +117,7 @@
       <workItem from="1604127385646" duration="12470000" />
       <workItem from="1604149500239" duration="2890000" />
       <workItem from="1604172120972" duration="772000" />
-      <workItem from="1604213947065" duration="23047000" />
+      <workItem from="1604213947065" duration="24626000" />
     </task>
     <task id="LOCAL-00001" summary="reorganized the code">
       <created>1603912771905</created>
@@ -198,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604146568411</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="redefined user model&#10;made a lot of changes through the apps to fix the errors after the user model change.">
+      <created>1604237182408</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1604237182408</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +218,8 @@
     <MESSAGE value="restricted acces to profile and update profile if not authorized" />
     <MESSAGE value="fixed authorization in template for edit profile" />
     <MESSAGE value="added requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="added requirements.txt" />
+    <MESSAGE value="redefined user model&#10;made a lot of changes through the apps to fix the errors after the user model change." />
+    <option name="LAST_COMMIT_MESSAGE" value="redefined user model&#10;made a lot of changes through the apps to fix the errors after the user model change." />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604172892864">
@@ -274,11 +266,11 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2381" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1603613711205" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604146573674">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604237187292">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604141912398" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1604146573674" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1604237187292" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604000132977" />
     <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603912788218" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604177198125">
