@@ -7,13 +7,15 @@ from django.contrib.auth.models import User
 
 
 class HomeView(ListView):
-    model = UserProfile
-    template_name = "home.html"
-    context_object_name = 'users'
+    model = Item
+    template_name = 'home.html'
+    context_object_name = 'items'
+    paginate_by = 4
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['products'] = Item.objects.all()
+        context['users'] = UserProfile.objects.all()
         return context
 
 
@@ -21,19 +23,6 @@ class ProfileView(ListView):
     model = UserProfile
     template_name = 'navbar.html'
     context_object_name = 'users'
-
-
-class CategoryAllView(ListView):
-    model = Item
-    template_name = 'all_categories.html'
-    context_object_name = 'items'
-    paginate_by = 4
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super(CategoryAllView, self).get_context_data(**kwargs)
-        context['products'] = Item.objects.all()
-        context['users'] = UserProfile.objects.all()
-        return context
 
 
 class FooterListView(ListView):

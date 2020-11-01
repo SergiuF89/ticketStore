@@ -10,7 +10,7 @@ from .views import (
     AddCouponView,
     RequestRefundView
 )
-from posts.views import HomeView, CategoryRockView, CategoryHouseView, CategoryHipHopView, CategoryAllView
+from posts.views import HomeView, CategoryRockView, CategoryHouseView, CategoryHipHopView
 from users.views import ProfileView, UserProfileView
 
 
@@ -18,7 +18,7 @@ from users.views import ProfileView, UserProfileView
 app_name = 'core'
 
 urlpatterns = [
-    path('', HomeView.as_view(), name='home'),
+    path('', HomeView.as_view(), name='all-categories'),
     path('checkout/', CheckoutView.as_view(), name='checkout'),
     path('order-summary/', OrderSummaryView.as_view(), name='order-summary'),
     path('product/<slug>/', ItemDetailView.as_view(), name='product'),
@@ -32,7 +32,6 @@ urlpatterns = [
     path('rock/', CategoryRockView.as_view(), name='rock-category'),
     path('house/', CategoryHouseView.as_view(), name='house-category'),
     path('hip_hop/', CategoryHipHopView.as_view(), name='hip-hop-category'),
-    path('all/', CategoryAllView.as_view(), name='all-categories'),
     path('profile/<int:pk>', UserProfileView.as_view(), name='profile-view'),
     path('profile/update/<int:pk>', ProfileView.as_view(), name='profile-update'),
 ]
