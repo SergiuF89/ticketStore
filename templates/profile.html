@@ -20,6 +20,10 @@
                 <a href="{% url 'core:profile-update' user_profile.pk %}">
                     <button class="btn btn-primary m-4">Edit</button>
                 </a>
+                <a href="{% url 'account_logout' %}">
+                    <button class="btn btn-danger m-4">Logout</button>
+                </a>
+
             {% endif %}
         </div>
 

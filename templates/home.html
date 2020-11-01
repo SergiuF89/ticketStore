@@ -5,8 +5,8 @@
     <div class="container">
     </div>
   </main>
+    {% if request.user.is_authenticated %}
     <div style="height: 500px">
-
     {% for user in users %}
         <ul>
         {% if request.user.pk == user.pk %}
@@ -16,6 +16,10 @@
         </ul>
     {% endfor %}
     </div>
+        {% else %}
+        <h2 class="ml-3">Please <a href="{% url 'account_login' %}">login</a></h2>
+    {% endif %}
+
 
 {% endblock content %}
 
