@@ -1,49 +1,80 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <style>
+        @media (max-width: 1200px) {
+            #product_title {
+                margin-left: 25% !important;
+                font-size: small !important;
+            }
+        }
 
-  <main style="margin-bottom: 10%;" class="mt-5 pt-4">
-    <div style="line-height: normal" class="container dark-grey-text mt-2">
+        @media (max-width: 1000px) {
+            #product_title {
+                margin-left: 20% !important;
+            }
 
-      <!--Grid row-->
-      <div class="row wow fadeIn">
+            #product_title a {
+                font-size: medium !important;
+            }
+        }
 
-        <!--Grid column-->
-        <div class="col-md-6 mb-4">
+        @media (max-width: 770px) {
+            #product_title {
+                margin-left: 28% !important;
+                font-size: small !important;
+            }
+        }
 
-          <img src="{{ item.image.url }}" class="img-thumbnail mt-5" alt="">
+        @media (max-width: 500px) {
+            #product_title {
+                margin-left: 20% !important;
+                font-size: small !important;
+            }
+        }
+    </style>
 
-        </div>
-        <!--Grid column-->
+    <main style="margin-bottom: 10%;" class="mt-5 pt-4">
+        <div style="line-height: normal" class="container dark-grey-text mt-2">
 
-        <!--Grid column-->
-        <div class="col-md-6 mb-4">
+            <!--Grid row-->
+            <div class="row wow fadeIn">
 
-          <!--Content-->
-          <div class="p-4">
-
-            <div class="mb-3">
-              <a href="">
-                <span class="badge purple mr-1">{{ object.title }}</span>
-              </a>
-            </div>
-
-            <p class="lead">
-              {% if object.discount_price %}
-              <span class="mr-1">
+                <!--Grid column-->
+                <div class="col-md-6 mb-4">
+                    <div style="margin-left: 30%" id="product_title">
+                        <a href="">
+                            <span class="badge purple mr-1"><h2>{{ object.title }}</h2></span>
+                        </a>
+                        <p style="margin-left: 16%" class="lead mt-2">
+                            {% if object.discount_price %}
+                                <span class="mr-1">
                 <del>${{ object.price }}</del>
               </span>
-              <span>${{ object.discount_price }}</span>
-              {% else %}
-              <span>${{ object.price }}</span>
-              {% endif %}
-            </p>
+                                <span>${{ object.discount_price }}</span>
+                            {% else %}
+                                <span class="ml-3">${{ object.price }}</span>
+                            {% endif %}
+                        </p>
+                    </div>
 
-            <p class="lead font-weight-bold">Description</p>
+                    <img src="{{ item.image.url }}" class="img-thumbnail mt-3 mr-2" alt="">
 
-            <p>{{ object.description }}</p>
+                </div>
+                <!--Grid column-->
 
-            {% comment %} <form class="d-flex justify-content-left">
+                <!--Grid column-->
+                <div class="col-md-6 mb-4">
+
+                    <!--Content-->
+                    <div class="p-4 mt-5">
+
+
+                        <p class="lead font-weight-bold">Description</p>
+
+                        <p>{{ object.description }}</p>
+
+                        {% comment %} <form class="d-flex justify-content-left">
               <!-- Default input -->
               <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
               <button class="btn btn-primary btn-md my-0 p" type="submit">
@@ -52,26 +83,28 @@
               </button>
 
             </form> {% endcomment %}
-            <a style="width: fit-content; margin-left: 30%" href="{{ object.get_add_to_cart_url }}" class="d-block btn btn-primary btn-md my-2 p">
-              Add to cart
-              <i class="fas fa-shopping-cart ml-1"></i>
-            </a>
-            {% comment %}
+
+                        {% comment %}
             <a href="{{ object.get_remove_from_cart_url }}" class="d-block btn btn-danger btn-md my-0 p">
               Remove from cart
             </a>
             {% endcomment %}
+                        <a style="width: fit-content;" href="{{ object.get_add_to_cart_url }}"
+                           class="d-block btn btn-primary btn-md my-2">
+                            Add to cart
+                            <i class="fas fa-shopping-cart ml-1"></i>
+                        </a>
+                    </div>
+                    <!--Content-->
 
-          </div>
-          <!--Content-->
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+
 
         </div>
-        <!--Grid column-->
-
-      </div>
-
-
-    </div>
-  </main>
+    </main>
 
 {% endblock content %}
