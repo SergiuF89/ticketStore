@@ -22,11 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b56bb89-57ef-4eb6-b066-41821d25a11e" name="Default Changelist" comment="changed navbar to fit mobile phones">
+    <list default="true" id="6b56bb89-57ef-4eb6-b066-41821d25a11e" name="Default Changelist" comment="changed product detail title and made it responsive">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rockIT/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rockIT/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +144,7 @@
       <workItem from="1604172120972" duration="772000" />
       <workItem from="1604213947065" duration="25318000" />
       <workItem from="1604260800777" duration="3452000" />
-      <workItem from="1604329556929" duration="2370000" />
+      <workItem from="1604329556929" duration="4184000" />
     </task>
     <task id="LOCAL-00001" summary="reorganized the code">
       <created>1603912771905</created>
@@ -237,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604264131708</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="changed product detail title and made it responsive">
+      <created>1604331996376</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1604331996376</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +277,8 @@
     <MESSAGE value="added some styling to profile page" />
     <MESSAGE value="changed home-page&#10;fixed some bugs" />
     <MESSAGE value="changed navbar to fit mobile phones" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed navbar to fit mobile phones" />
+    <MESSAGE value="changed product detail title and made it responsive" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed product detail title and made it responsive" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604172892864">
@@ -317,12 +325,12 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2381" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1603613711205" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604264135330">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604332000878">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604141912398" />
     <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1604238838836" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604264135330" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604332000878" />
     <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603912788218" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604329564977">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -333,12 +341,12 @@
     </state>
     <state x="2587" y="119" width="585" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1604234842127" />
     <state x="667" y="119" width="585" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604262176268" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604330160666">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604333159365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604224742256" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040/-1920.0.1920.1040@1920.0.1920.1040" timestamp="1604239137723" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604330160666" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604333159365" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1603909487331" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">

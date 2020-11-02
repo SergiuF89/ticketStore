@@ -1,38 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <style>
-        @media (max-width: 1200px) {
-            #product_title {
-                margin-left: 25% !important;
-                font-size: small !important;
-            }
-        }
 
-        @media (max-width: 1000px) {
-            #product_title {
-                margin-left: 20% !important;
-            }
-
-            #product_title a {
-                font-size: medium !important;
-            }
-        }
-
-        @media (max-width: 770px) {
-            #product_title {
-                margin-left: 28% !important;
-                font-size: small !important;
-            }
-        }
-
-        @media (max-width: 500px) {
-            #product_title {
-                margin-left: 20% !important;
-                font-size: small !important;
-            }
-        }
-    </style>
 
     <main style="margin-bottom: 10%;" class="mt-5 pt-4">
         <div style="line-height: normal" class="container dark-grey-text mt-2">
@@ -42,15 +11,15 @@
 
                 <!--Grid column-->
                 <div class="col-md-6 mb-4">
-                    <div style="margin-left: 30%" id="product_title">
+                    <div class="text-center" id="product_title">
                         <a href="">
                             <span class="badge purple mr-1"><h2>{{ object.title }}</h2></span>
                         </a>
-                        <p style="margin-left: 16%" class="lead mt-2">
+                        <p class="lead mt-2">
                             {% if object.discount_price %}
                                 <span class="mr-1">
-                <del>${{ object.price }}</del>
-              </span>
+                                    <del>${{ object.price }}</del>
+                                </span>
                                 <span>${{ object.discount_price }}</span>
                             {% else %}
                                 <span class="ml-3">${{ object.price }}</span>
@@ -59,19 +28,10 @@
                     </div>
 
                     <img src="{{ item.image.url }}" class="img-thumbnail mt-3 mr-2" alt="">
-
                 </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
                 <div class="col-md-6 mb-4">
-
-                    <!--Content-->
                     <div class="p-4 mt-5">
-
-
                         <p class="lead font-weight-bold">Description</p>
-
                         <p>{{ object.description }}</p>
 
                         {% comment %} <form class="d-flex justify-content-left">
@@ -83,27 +43,14 @@
               </button>
 
             </form> {% endcomment %}
-
-                        {% comment %}
-            <a href="{{ object.get_remove_from_cart_url }}" class="d-block btn btn-danger btn-md my-0 p">
-              Remove from cart
-            </a>
-            {% endcomment %}
                         <a style="width: fit-content;" href="{{ object.get_add_to_cart_url }}"
-                           class="d-block btn btn-primary btn-md my-2">
+                           class="btn btn-primary btn-md my-2">
                             Add to cart
                             <i class="fas fa-shopping-cart ml-1"></i>
                         </a>
                     </div>
-                    <!--Content-->
-
-
                 </div>
-                <!--Grid column-->
-
             </div>
-
-
         </div>
     </main>
 

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
     <div style="height: 600px;" class="container">
-        <div style="min-height: fit-content; background-color: whitesmoke" class="card d-block">
+        <div style="min-height: fit-content; background-color: whitesmoke" class="card d-block mb-5">
             {% if user_profile.profile_image %}
                 <img style="height: 150px; width: auto; border-radius: 20px" class="float-right m-4 z-depth-3"
                      src="{{ user_profile.profile_image.url }}" alt="">
@@ -9,7 +9,7 @@
             <div class="container">
             </div>
             <div class="ml-3">
-                <h2 class="mb-5">Welcome <strong>{{ user_profile.first_name }} {{ user_profile.last_name }}</strong></h2>
+                <h2 class=" mb-5 text-center">Welcome <strong>{{ user_profile.first_name }} {{ user_profile.last_name }}</strong></h2>
                 <p>Date of birth : {{ user_profile.birth_date }}</p>
                 <p>Phone nr: {{ user_profile.phone_number }}</p>
                 <p>You have been with us since {{ user_profile.joined_on }}</p>
@@ -18,10 +18,13 @@
 
             {% if request.user.pk == user_profile.pk %}
                 <a href="{% url 'core:profile-update' user_profile.pk %}">
-                    <button class="btn btn-primary m-4">Edit</button>
+                    <button class="btn btn-primary  ml-3 btn-sm">Edit</button>
                 </a>
                 <a href="{% url 'account_logout' %}">
-                    <button class="btn btn-danger m-4">Logout</button>
+                    <button class="btn btn-danger mr-1 btn-sm">Logout</button>
+                </a>
+                <a href="{% url 'core:request-refund' %}">
+                    <button class="btn btn-deep-purple btn-sm">Refund</button>
                 </a>
 
             {% endif %}
