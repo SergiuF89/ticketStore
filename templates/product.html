@@ -2,8 +2,8 @@
 
 {% block content %}
 
-  <main style="margin-bottom: 15%; height: inherit" class="mt-5 pt-4">
-    <div class="container dark-grey-text mt-2">
+  <main style="margin-bottom: 10%;" class="mt-5 pt-4">
+    <div style="line-height: normal" class="container dark-grey-text mt-2">
 
       <!--Grid row-->
       <div class="row wow fadeIn">
@@ -52,13 +52,15 @@
               </button>
 
             </form> {% endcomment %}
-            <a href="{{ object.get_add_to_cart_url }}" class="btn btn-primary btn-md my-0 p">
+            <a style="width: fit-content; margin-left: 30%" href="{{ object.get_add_to_cart_url }}" class="d-block btn btn-primary btn-md my-2 p">
               Add to cart
               <i class="fas fa-shopping-cart ml-1"></i>
             </a>
-            <a href="{{ object.get_remove_from_cart_url }}" class="btn btn-danger btn-md my-0 p">
+            {% comment %}
+            <a href="{{ object.get_remove_from_cart_url }}" class="d-block btn btn-danger btn-md my-0 p">
               Remove from cart
             </a>
+            {% endcomment %}
 
           </div>
           <!--Content-->

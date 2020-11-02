@@ -18,7 +18,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <!-- Left -->
-            <ul style="flex-flow: row-reverse" class="navbar-nav mr-auto">
+            <ul style="flex-flow: row" class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link waves-effect" href="/">Home
                         <span class="sr-only">(current)</span>
@@ -39,15 +39,17 @@
                         <a class="nav-link waves-effect" href="{% url 'account_signup' %}">Signup</a>
                     </li>
                 {% endif %}
+                {% for user in users %}
+                {% if request.user.pk == user.pk %}
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect mr-3" href="{% url 'core:profile-view' user.pk %}">Profile</a>
+                    </li>
+                {% endif %}{% endfor %}
+                <li><a href="{% url 'core:order-summary' %}"><i style="margin-top: 2px" class=" ml-2 pt-2 fas fa-cart-arrow-down"></i></a></li>
                 <li style="margin-top: 2px" class="pt-1"><span class="badge blue z-depth-1 ml-1"> {{ request.user|cart_item_count }} </span>
                 </li>
-                <li><a href="{% url 'core:order-summary' %}"><i style="margin-top: 2px" class=" ml-2 pt-2 fas fa-cart-arrow-down"></i></a></li>
-                {% for user in users %}
-                    {% if request.user.pk == user.pk %}
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect" href="{% url 'core:profile-view' user.pk %}">Profile</a>
-                        </li>
-                    {% endif %}{% endfor %}
+
+
             </ul>
 
 
