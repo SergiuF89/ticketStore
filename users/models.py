@@ -2,6 +2,8 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django_countries.fields import CountryField
 from django.shortcuts import reverse
+import datetime
+
 
 ADDRESS_CHOICES = (
       ('B', 'Billing'),
@@ -16,7 +18,7 @@ GENDER = (
 
 class UserProfile(AbstractUser):
       gender = models.IntegerField(choices=GENDER, default=3)
-      birth_date = models.DateField(null=True, blank=True)
+      birth_date = models.DateField(help_text='ex: 2020-01-20' ,null=True, blank=True, default=datetime.date.today())
       stripe_customer_id = models.CharField(max_length=50, blank=True, null=True)
       one_click_purchasing = models.BooleanField(default=False)
       phone_number = models.CharField(max_length=15, blank=True)
