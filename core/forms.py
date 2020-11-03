@@ -4,6 +4,7 @@ from django_countries.widgets import CountrySelectWidget
 from users.models import UserProfile
 from django.forms import ModelForm
 
+
 PAYMENT_CHOICES = (
       ('S', 'Stripe'),
       ('P', 'PayPal')
@@ -11,6 +12,9 @@ PAYMENT_CHOICES = (
 
 
 class EditProfileForm(ModelForm):
+      def __init__(self, *args, **kwargs):
+            super(EditProfileForm, self).__init__(*args, **kwargs)
+
       class Meta:
             model = UserProfile
             widgets = {'country': CountrySelectWidget()}

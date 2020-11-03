@@ -8,7 +8,7 @@ from .views import (
     remove_single_item_from_cart,
     PaymentView,
     AddCouponView,
-    RequestRefundView
+    RequestRefundView,
 )
 from posts.views import HomeView, CategoryRockView, CategoryHouseView, CategoryHipHopView
 from users.views import ProfileView, UserProfileView
