@@ -218,7 +218,7 @@ class PaymentView(View):
                 'DISPLAY_COUPON_FORM': False,
                 'STRIPE_PUBLIC_KEY' : settings.STRIPE_PUBLIC_KEY
             }
-            userprofile = self.request.user.userprofile
+            userprofile = self.request.user
             if userprofile.one_click_purchasing:
                 # fetch the users card list
                 cards = stripe.Customer.list_sources(
