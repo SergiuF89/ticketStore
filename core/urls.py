@@ -1,4 +1,7 @@
+from django.conf.urls import url
 from django.urls import path
+
+from items.views import search
 from .views import (
     ItemDetailView,
     CheckoutView,
@@ -34,4 +37,5 @@ urlpatterns = [
     path('hip_hop/', CategoryHipHopView.as_view(), name='hip-hop-category'),
     path('profile/<int:pk>', UserProfileView.as_view(), name='profile-view'),
     path('profile/update/<int:pk>', ProfileView.as_view(), name='profile-update'),
+    url(r'^search/$', search, name = 'search'),
 ]
