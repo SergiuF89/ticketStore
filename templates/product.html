@@ -18,11 +18,11 @@
                         <p class="lead mt-2">
                             {% if object.discount_price %}
                                 <span class="mr-1">
-                                    <del>${{ object.price }}</del>
+                                    <del>€{{ object.price }}</del>
                                 </span>
-                                <span>${{ object.discount_price }}</span>
+                                <span>€{{ object.discount_price }}</span>
                             {% else %}
-                                <span class="ml-3">${{ object.price }}</span>
+                                <span class="ml-3">€{{ object.price }}</span>
                             {% endif %}
                         </p>
                     </div>

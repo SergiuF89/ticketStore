@@ -116,7 +116,7 @@ button:hover {
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" name="use_default_card" id="use_default_card">
                   <label class="custom-control-label" for="use_default_card">Use default card:
-                    **** **** **** {{ card.last4 }} 
+                    **** **** **** {{ card.last4 }}
                   <span>Exp: {{ card.exp_month }}/{{ card.exp_year }}</span></label>
                 </div>
               </div>
@@ -241,8 +241,8 @@ button:hover {
     form.submit();
   }
 
-  var currentCardForm = $('.current-card-form');
-  var newCardForm = $('.new-card-form');
+  var currentCardForm = €('.current-card-form');
+  var newCardForm = €('.new-card-form');
   var use_default_card = document.querySelector("input[name=use_default_card]");
   use_default_card.addEventListener('change', function() {
     if (this.checked) {
