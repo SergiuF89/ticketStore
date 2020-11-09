@@ -22,13 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b56bb89-57ef-4eb6-b066-41821d25a11e" name="Default Changelist" comment="fixed some bugs, added categoryitem">
-      <change afterPath="$PROJECT_DIR$/items/filters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/shop/categories.html" afterDir="false" />
+    <list default="true" id="6b56bb89-57ef-4eb6-b066-41821d25a11e" name="Default Changelist" comment="added request refund">
+      <change afterPath="$PROJECT_DIR$/users/migrations/0007_auto_20201109_0816.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/items/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/items/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rockIT/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/rockIT/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shop/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shop/categories.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="6200c0e6-dd4c-4d43-b25b-299e56975ad8" />
+  <component name="JupyterTrust" id="ba86db7d-eb8e-4fac-ac8a-2a51bd2071d6" />
   <component name="ProjectId" id="1jMSPcyTTgLUbx4dh09aWE3W24w" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />

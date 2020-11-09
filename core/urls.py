@@ -37,5 +37,5 @@ urlpatterns = [
     path('hip_hop/', CategoryHipHopView.as_view(), name='hip-hop-category'),
     path('profile/<int:pk>', UserProfileView.as_view(), name='profile-view'),
     path('profile/update/<int:pk>', ProfileView.as_view(), name='profile-update'),
-    url(r'^search/$', search, name = 'search'),
+    url(r'^shop/$', search, name = 'search'),
 ]
