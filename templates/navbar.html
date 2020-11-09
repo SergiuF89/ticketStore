@@ -24,6 +24,11 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect" href="{% url 'core:search' %}">Tickets
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
                 {% if request.user.is_anonymous %}
                     <li class="nav-item">
                         <a class="nav-link waves-effect" href="{% url 'account_login' %}">Login</a>
@@ -40,18 +45,20 @@
                     </li>
                 {% endif %}
                 {% for user in users %}
-                {% if request.user.pk == user.pk %}
-                    <li class="nav-item">
-                        <a class="nav-link waves-effect mr-3" href="{% url 'core:profile-view' user.pk %}">Profile</a>
-                    </li>
-                {% endif %}{% endfor %}
-                <li><a href="{% url 'core:order-summary' %}"><i style="margin-top: 2px" class=" ml-2 pt-2 fas fa-cart-arrow-down"></i></a></li>
-                <li style="margin-top: 2px" class="pt-1"><span class="badge blue z-depth-1 ml-1"> {{ request.user|cart_item_count }} </span>
+                    {% if request.user.pk == user.pk %}
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect mr-3"
+                               href="{% url 'core:profile-view' user.pk %}">Profile</a>
+                        </li>
+                    {% endif %}{% endfor %}
+                <li><a href="{% url 'core:order-summary' %}"><i style="margin-top: 2px"
+                                                                class=" ml-2 pt-2 fas fa-cart-arrow-down"></i></a></li>
+                <li style="margin-top: 2px" class="pt-1"><span
+                        class="badge blue z-depth-1 ml-1"> {{ request.user|cart_item_count }} </span>
                 </li>
 
 
             </ul>
-
 
 
         </div>

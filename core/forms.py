@@ -1,8 +1,9 @@
+from crispy_forms.layout import Layout
 from django import forms
 from django_countries.fields import CountryField
 from django_countries.widgets import CountrySelectWidget
 from users.models import UserProfile
-from django.forms import ModelForm
+from django.forms import ModelForm, DateField
 
 
 PAYMENT_CHOICES = (
@@ -14,10 +15,12 @@ PAYMENT_CHOICES = (
 class EditProfileForm(ModelForm):
       def __init__(self, *args, **kwargs):
             super(EditProfileForm, self).__init__(*args, **kwargs)
+            self.fields['birth_date'].widget.attrs.update({'id': 'date_id'})
 
       class Meta:
             model = UserProfile
-            widgets = {'country': CountrySelectWidget()}
+            widgets = {'country': CountrySelectWidget(),
+                       'birth_date': forms.SelectDateWidget(attrs={'class': 'date'})}
             fields = ['first_name', 'last_name', 'gender', 'birth_date', 'profile_image', 'phone_number', 'country']
 
 

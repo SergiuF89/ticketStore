@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 {% load crispy_forms_filters %}
+{% block small-nav %}
+{% endblock %}
 <!--Navbar is here-->
 {% block content %}
   <main>
-    <script>
-    </script>
+      <style>
+          label{
+              display: none;
+          }
+      </style>
     <div class="container">
       <section class="text-center mb-4">
+      <h2>Categories</h2>
         <form action="" method="get" onchange="this.submit()">
               {{ filter.form|crispy }}
             </form>
