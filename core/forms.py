@@ -15,7 +15,7 @@ PAYMENT_CHOICES = (
 class EditProfileForm(ModelForm):
       def __init__(self, *args, **kwargs):
             super(EditProfileForm, self).__init__(*args, **kwargs)
-            self.fields['birth_date'].widget.attrs.update({'id': 'date_id'})
+            self.fields['birth_date'].widget = forms.DateInput(attrs={'type': 'date'})
 
       class Meta:
             model = UserProfile
